@@ -6,7 +6,8 @@ public enum TVA {
     DK(0.25),
     HR(0.25),
     IS(0.255),
-    CH(0.08);
+    CH(0.08),
+    FR(0.196);
 
     private double valeur=0;
 
