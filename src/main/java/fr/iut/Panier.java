@@ -33,6 +33,16 @@ public class Panier {
         return prixTTC;
     }
 
+    public double getPrixAvecReduc(final double TVA){
+        prixTTC=0;
+        int quantite = getQuantite();
+        if(quantite < 1000){
+            return getPrixTTC(TVA)*(1+Reduc.reduc0.getValeur());
+        }
+
+        return 0;
+    }
+
     public int getQuantite(){
         int quantite = 0;
         for(int i=0;i<produits.size();i++){

@@ -2,7 +2,7 @@ package fr.iut;
 
 public enum Reduc {
 
-    Reduc0(0);
+    reduc0(0);
 
     private double valeur=0;
 

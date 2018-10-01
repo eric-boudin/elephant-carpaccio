@@ -75,7 +75,15 @@ public class Test {
 
     @org.junit.Test
     public void testReduc0(){
-        assertTrue(Reduc.Reduc0.getValeur()==0);
+        assertTrue(Reduc.reduc0.getValeur()==0);
+    }
+
+    @org.junit.Test
+    public void testTTCWithReduc0(){
+        Panier panier = new Panier();
+        panier.ajouterArticle(new Produit("Chèvre",15.0,999));
+        double prix = panier.getPrixAvecReduc(1+TVA.FR.getValeur());
+        assertEquals(17922.06,prix,0.01d);
     }
 
 
