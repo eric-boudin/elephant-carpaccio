@@ -2,7 +2,11 @@ package fr.iut;
 
 public enum TVA {
 
-    DE(0.19);
+    DE(0.19),
+    DK(0.25),
+    HR(0.25),
+    IS(0.255),
+    CH(0.08);
 
     private double valeur=0;
 

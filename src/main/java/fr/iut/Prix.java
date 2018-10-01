@@ -6,4 +6,9 @@ public class Prix {
         return prixHT*quantite;
     }
 
+    public static double calculerPrixTTC(final double prixHT, final double tva){
+        return prixHT*tva;
+    }
+
+
 }
