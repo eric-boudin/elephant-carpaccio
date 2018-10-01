@@ -37,10 +37,24 @@ public class Panier {
         prixTTC=0;
         int quantite = getQuantite();
         if(quantite < 1000){
-            return getPrixTTC(TVA)*(1+Reduc.reduc0.getValeur());
+            prixTTC = getPrixHT()*(1-Reduc.reduc0.getValeur())*TVA;
         }
-
-        return 0;
+        else if((quantite >= 1000) && (quantite <5000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc1000.getValeur())*TVA;
+        }
+        else if((quantite >= 5000) && (quantite <7000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc5000.getValeur())*TVA;
+        }
+        else if((quantite >= 7000) && (quantite <10000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc7000.getValeur())*TVA;
+        }
+        else if((quantite >= 10000) && (quantite <50000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc10000.getValeur())*TVA;
+        }
+        else if(quantite >= 50000){
+            prixTTC = getPrixHT() * (1-Reduc.reduc50000.getValeur())*TVA;
+        }
+        return prixTTC;
     }
 
     public int getQuantite(){
