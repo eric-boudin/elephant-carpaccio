@@ -19,4 +19,8 @@ public class Produit {
         return getPrixHT()*TVA;
     }
 
+    public double getQuantite(){
+        return quantite;
+    }
+
 }

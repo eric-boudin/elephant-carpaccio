@@ -73,4 +73,11 @@ public class Test {
         assertEquals(233.22d,prixTTC,0.01d);
     }
 
+    @org.junit.Test
+    public void testReduc0(){
+        assertTrue(Reduc.Reduc0.getValeur()==0);
+    }
+
+
+
 }
