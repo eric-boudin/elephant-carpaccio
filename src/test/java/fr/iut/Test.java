@@ -86,6 +86,14 @@ public class Test {
         assertEquals(17922.06,prix,0.01d);
     }
 
+    /*@org.junit.Test
+    public void testReduc1000(){
+        assertTrue(Reduc.reduc1000.getValeur()==0.03);
+    }
 
+    @org.junit.Test
+    public void testReduc5000(){
+        assertTrue(Reduc.reduc1000.getValeur()==0.05);
+    }*/
 
 }
