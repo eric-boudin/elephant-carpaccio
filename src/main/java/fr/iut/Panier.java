@@ -33,4 +33,12 @@ public class Panier {
         return prixTTC;
     }
 
+    public int getQuantite(){
+        int quantite = 0;
+        for(int i=0;i<produits.size();i++){
+            quantite+=produits.get(i).getQuantite();
+        }
+        return quantite;
+    }
+
 }
