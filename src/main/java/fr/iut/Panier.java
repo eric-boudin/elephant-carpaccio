@@ -33,4 +33,36 @@ public class Panier {
         return prixTTC;
     }
 
+    public double getPrixAvecReduc(final double TVA){
+        prixTTC=0;
+        int quantite = getQuantite();
+        if(quantite < 1000){
+            prixTTC = getPrixHT()*(1-Reduc.reduc0.getValeur())*TVA;
+        }
+        else if((quantite >= 1000) && (quantite <5000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc1000.getValeur())*TVA;
+        }
+        else if((quantite >= 5000) && (quantite <7000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc5000.getValeur())*TVA;
+        }
+        else if((quantite >= 7000) && (quantite <10000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc7000.getValeur())*TVA;
+        }
+        else if((quantite >= 10000) && (quantite <50000)){
+            prixTTC = getPrixHT() * (1-Reduc.reduc10000.getValeur())*TVA;
+        }
+        else if(quantite >= 50000){
+            prixTTC = getPrixHT() * (1-Reduc.reduc50000.getValeur())*TVA;
+        }
+        return prixTTC;
+    }
+
+    public int getQuantite(){
+        int quantite = 0;
+        for(int i=0;i<produits.size();i++){
+            quantite+=produits.get(i).getQuantite();
+        }
+        return quantite;
+    }
+
 }
